@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 // The computer choose randomly between rock, paper or scissors
 function computerPlay() {
   const randomRockPaperScissors = Math.floor(Math.random() * 3 );
@@ -9,50 +12,71 @@ function computerPlay() {
       return "scissors";
     }
 }
-//const computerSelection = computerPlay();
-// console.log(computerSelection);
 
 
 
-function playRound(playerSelection, computerSelection) {
+
+function playRound(playerSelection, computerSelection) { 
   // player wins if
   if (playerSelection == "rock" && computerSelection == "scissors") {
+    ++playerScore;
     return "player wins, rock beats scissors";
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
+    ++playerScore;
     return "player wins, scissors beats paper";
   } else if (playerSelection == "paper" && computerSelection == "rock") {
+    ++playerScore;
     return "player wins, papers beats rock";
   } 
   // player looses if
   else if (playerSelection == "scissors" && computerSelection == "rock") {
+    ++computerScore;
     return "player looses, rock beats scissors";
   }   else if (playerSelection == "paper" && computerSelection == "scissors") {
+    ++computerScore;
     return "player looses, scissors beats paper";
   }   else if (playerSelection == "rock" && computerSelection == "paper") {
+    ++computerScore;
     return "player looses, paper beats rock";
   } 
   // player & computer equal if
   else if (playerSelection == computerSelection) {
     return "nobody wins, play another round";
   }   
+  // if write error in the prompt input
+  else if (playerSelection !== "paper", "scissors", "rock") {
+    return 'write correctly "rock", "paper" or "scissors" ';
+  }
 }
-let playerSelectionUpOrLowerCase = prompt("Choose between rock, paper and scissors");
-let playerSelection = playerSelectionUpOrLowerCase.toLocaleLowerCase();
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
 
 
+
+
+
+// The game has 5 rounds
+// the player choose between rock, paper and scissors
+// the result appears
+// the game stops at the 5th round
 function game () {
   for (let i = 0; i < 5; i++) {
-  // code
+    const computerSelection = computerPlay();
+    let playerSelectionUpOrLowerCase = prompt("Choose and write rock, paper or scissors");
+    let playerSelection = playerSelectionUpOrLowerCase.toLocaleLowerCase();
+    console.log(playRound(playerSelection, computerSelection));
+    console.log("PLAYER  " + playerScore + " - " + computerScore + "  COMPUTER");
+    // if (playRound(playerSelection, computerSelection) === "player wins, rock beats scissors") {
+    //   ++playerScore;
+    // }
  }
+  if (playerScore < computerScore) {
+    console.log("COMPUTER WINS")
+  }
+  else if (playerScore > computerScore) {
+    console.log("PLAYER WINS")
+  }
+  else if (playerScore == computerScore) {
+    console.log("NO WINNER")
+  }
 }
 
-  // // player & computer equal if
-  // else if (playerSelection == "scissors" && computerSelection == "scissors") {
-  //   return "scissors vs scissors, nobody wins, play another round";
-  // }   else if (playerSelection == "paper" && computerSelection == "paper") {
-  //   return "paper vs paper, nobody wins, play another round";
-  // }   else if (playerSelection == "rock" && computerSelection == "rock") {
-  //   return "rock vs rock, nobody wins, play another round";
-  // }  
+game();
