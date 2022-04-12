@@ -40,7 +40,8 @@ function playRound(playerSelection, computerSelection) {
     return "rock vs rock, nobody wins, play another round";
   }  
 }
-const playerSelection = prompt("Choose between rock, paper and scissors");
+let playerSelectionUpOrLowerCase = prompt("Choose between rock, paper and scissors");
+let playerSelection = playerSelectionUpOrLowerCase.toLocaleLowerCase();
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
 
