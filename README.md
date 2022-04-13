@@ -12,7 +12,7 @@ __The benefits I got from this stage:__
 * Learned how to read and understand the errors on the console() and fix them.
 * Created an algorithm and made it work.
 
-If want to enjoy the game click here on this [--LINK--](https://richintheflow.github.io/rock-paper-scissors/) and follow the next instructions:
+If want to enjoy the game click here [--LINK--](https://richintheflow.github.io/rock-paper-scissors/) and follow the next instructions:
 * Press F12 to open the DevTools of your browser and click "Console" on the top of the DevTools panel.
 * Type on the prompt rock, paper or scissors
 * See the result on the DevTools console of your browser.
