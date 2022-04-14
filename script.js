@@ -13,9 +13,6 @@ function computerPlay() {
     }
 }
 
-
-
-
 function playRound(playerSelection, computerSelection) { 
   // player wins if
   if (playerSelection == "rock" && computerSelection == "scissors") {
@@ -48,10 +45,6 @@ function playRound(playerSelection, computerSelection) {
     return 'write correctly "rock", "paper" or "scissors" ';
   }
 }
-
-
-
-
 
 // The game has 5 rounds
 // the player choose between rock, paper and scissors
